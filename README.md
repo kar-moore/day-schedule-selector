@@ -1,3 +1,6 @@
+##Update from kar-moore fork
+In the public folder, you can access an index.html page that will load a Sun-Sat 24hr schedule (you can adjust this in index.js). There's a bit of angularjs that will return the schedule data so you can use angular to do routing and stuff. I need this for an app I'm making but figured it might be useful to other people too. 
+
 # day-schedule-selector [![Build Status](https://travis-ci.org/starsirius/day-schedule-selector.svg)](https://travis-ci.org/starsirius/day-schedule-selector)
 
 A jQuery plugin to render a weekly schedule and allow selecting time slots in each day.

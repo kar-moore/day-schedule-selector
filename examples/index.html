@@ -12,7 +12,7 @@
 <body>
 
   <div id="day-schedule"></div>
-
+  <input type="button" value="test" id="target">
   <script src="vendor/javascripts/jquery-1.11.2.js"></script>
   <script src="../src/index.js"></script>
   <script>
@@ -25,14 +25,23 @@
         endTime: '21:06'
         */
       });
+
       $("#day-schedule").on('selected.artsy.dayScheduleSelector', function (e, selected) {
         console.log(selected);
-      })
-      $("#day-schedule").data('artsy.dayScheduleSelector').deserialize({
-        '0': [['09:30', '11:00'], ['13:00', '16:30']]
       });
+
+      $("#target").click(function() {
+        var lol = $("#day-schedule").data('artsy.dayScheduleSelector').serialize();
+        console.log(lol);
+      });
+
+      // $("#day-schedule").data('artsy.dayScheduleSelector').deserialize({
+      //   '0': [['09:30', '11:00'], ['13:00', '16:30']],
+      //   '3':[['08:00','12:00'],['15:00','15:30']]
+      // });
     })($);
   </script>
+  
 
 </body>
 </html>

@@ -1,3 +1,8 @@
+// used under MIT license 
+// original source: https://github.com/artsy/day-schedule-selector
+
+//I think this is written using backbone.js
+
 (function ($) {
   'use strict';
 
@@ -7,12 +12,12 @@
     this.render();
     this.attachEvents();
     this.$selectingStart = null;
-  }
+  };
 
   DayScheduleSelector.DEFAULTS = {
     days        : [0, 1, 2, 3, 4, 5, 6],  // Sun - Sat
-    startTime   : '08:00',                // HH:mm format
-    endTime     : '20:00',                // HH:mm format
+    startTime   : '00:00',                // HH:mm format
+    endTime     : '24:00',                // HH:mm format
     interval    : 30,                     // minutes
     stringDays  : ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
     template    : '<div class="day-schedule-selector">'         +
@@ -72,10 +77,10 @@
    */
   DayScheduleSelector.prototype.isSelecting = function () {
     return !!this.$selectingStart;
-  }
+  };
 
-  DayScheduleSelector.prototype.select = function ($slot) { $slot.attr('data-selected', 'selected'); }
-  DayScheduleSelector.prototype.deselect = function ($slot) { $slot.removeAttr('data-selected'); }
+  DayScheduleSelector.prototype.select = function ($slot) { $slot.attr('data-selected', 'selected'); };
+  DayScheduleSelector.prototype.deselect = function ($slot) { $slot.removeAttr('data-selected'); };
 
   function isSlotSelected($slot) { return $slot.is('[data-selected]'); }
   function isSlotSelecting($slot) { return $slot.is('[data-selecting]'); }
@@ -176,7 +181,7 @@
 
         if (!!end) { selections[v].push([start, end]); start = end = false; }
       });
-    })
+    });
     return selections;
   };
 
